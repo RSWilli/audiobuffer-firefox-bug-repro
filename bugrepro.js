@@ -34,9 +34,13 @@ offlinectx.oncomplete = (e) => {
 
     const ctx = new AudioContext()
 
+    const gain = ctx.createGain()
+
+    gain.gain.value = 0.2
+
     const src = ctx.createBufferSource()
 
-    src.connect(ctx.destination)
+    src.connect(gain).connect(ctx.destination)
 
     play?.addEventListener("click", () => {
         state.innerHTML = "resuming context"
