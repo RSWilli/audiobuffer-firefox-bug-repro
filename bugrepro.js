@@ -36,7 +36,7 @@ offlinectx.oncomplete = (e) => {
 
     const gain = ctx.createGain()
 
-    gain.gain.value = 0.2
+    gain.gain.value = 0.05
 
     const src = ctx.createBufferSource()
 
