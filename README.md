@@ -1,5 +1,7 @@
 # audiobuffer-firefox-bug-repro
 
+[Demo Page](https://rswilli.github.io/audiobuffer-firefox-bug-repro/)
+
 the script does the following:
 
 1. create a 5s `AudioBuffer` with a 300Hz sine tone via OfflineAudioContext
