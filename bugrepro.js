@@ -17,6 +17,7 @@ offlinectx.oncomplete = (e) => {
     const out = document.querySelector(".buffer")
     const state = document.querySelector(".state")
     const play = document.querySelector(".play")
+    const next = document.querySelector(".next")
 
     const buffer = e.renderedBuffer
 
@@ -38,15 +39,19 @@ offlinectx.oncomplete = (e) => {
     src.connect(ctx.destination)
 
     play?.addEventListener("click", () => {
+        state.innerHTML = "resuming context"
+        next.innerHTML = "in 2s: set buffer"
         ctx.resume()
 
         setTimeout(() => {
             state.innerHTML = "setting buffer"
+            next.innerHTML = "in 3s: start"
             src.buffer = buffer
         }, 2000)
 
         setTimeout(() => {
             state.innerHTML = "starting source"
+            next.innerHTML = "in 5s: buffer end"
             src.start()
         }, 5000)
 
